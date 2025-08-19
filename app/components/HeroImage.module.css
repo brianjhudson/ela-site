@@ -1,0 +1,61 @@
+.graphicSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.abstractGraphic {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out 1.2s forwards;
+}
+
+.graphicSvg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1));
+}
+
+.wireframe {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .graphicSection {
+    order: -1;
+  }
+  
+  .abstractGraphic {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .abstractGraphic {
+    height: 300px;
+  }
+}
